@@ -46,8 +46,8 @@ public class SeleccionController {
 	
 	// Modificar (actualizar un Seleccion existente)
     @PutMapping("/{id}")
-    public Seleccion update(@PathVariable Integer id, @RequestBody Seleccion updatedSeleccion) {
-        return seleccionService.update(id, updatedSeleccion);
+    public ResponseEntity<Seleccion> update(@PathVariable Integer id, @RequestBody Seleccion updatedSeleccion) {
+        return ResponseEntity.ok(seleccionService.update(id, updatedSeleccion));
     }
 	
     @DeleteMapping("/{id}")
